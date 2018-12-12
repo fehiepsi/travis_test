@@ -1,0 +1,22 @@
+language: python
+
+install:
+    - pip install -U pip
+    - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]]; then
+          pip install http://download.pytorch.org/whl/cpu/torch-1.0.0-cp27-cp27mu-linux_x86_64.whl;
+      else
+          pip install http://download.pytorch.org/whl/cpu/torch-1.0.0-cp36-cp36m-linux_x86_64.whl;
+      fi
+    - pip freeze
+
+jobs:
+    fast_finish: true
+    include:
+        - python: 2.7
+          env: STAGE=examples
+          script:
+              - conv2d.py
+        - python: 3.6
+          env: STAGE=examples
+          script:
+			  - conv2d.py
