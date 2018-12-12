@@ -9,6 +9,11 @@ install:
       fi
     - pip freeze
 
+branches:
+    only:
+        - master
+
+
 jobs:
     fast_finish: true
     include:
