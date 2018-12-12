@@ -19,9 +19,9 @@ jobs:
         - python: 2.7
           env: STAGE=examples
           script:
-              - conv2d.py
+              - python conv2d.py
         - python: 3.6
           env: STAGE=examples
           script:
-              - conv2d.py
+              - python conv2d.py
 
