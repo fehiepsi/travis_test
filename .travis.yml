@@ -19,21 +19,21 @@ jobs:
         - stage: 2.7 test 1
           python: 2.7
           script:
-              - python conv2d.py
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
               - python conv2d.py
         - stage: 2.7 test 2
           python: 2.7
           script:
-              - python conv2d.py
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
               - python conv2d.py
         - stage: 3.6 test 1
           python: 3.6
           script:
-              - python conv2d.py
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
               - python conv2d.py
         - stage: 3.6 test 2
           python: 3.6
           script:
-              - python conv2d.py
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
               - python conv2d.py
 
