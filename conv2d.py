@@ -10,3 +10,4 @@ o = conv(x)
 print("Time spent for conv:", time.time() - start)
 print("Sum of output:", o.sum().item())
 
+print()
