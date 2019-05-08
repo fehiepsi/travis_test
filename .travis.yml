@@ -16,12 +16,28 @@ branches:
 jobs:
     fast_finish: true
     include:
-        - python: 2.7
-          env: STAGE=examples
+        - stage: 2.7 test 1
+          python: 2.7
           script:
+              - cat /proc/cpuinfo
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
               - python conv2d.py
-        - python: 3.6
-          env: STAGE=examples
+        - stage: 2.7 test 2
+          python: 2.7
           script:
+              - cat /proc/cpuinfo
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
+              - python conv2d.py
+        - stage: 3.6 test 1
+          python: 3.6
+          script:
+              - cat /proc/cpuinfo
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
+              - python conv2d.py
+        - stage: 3.6 test 2
+          python: 3.6
+          script:
+              - cat /proc/cpuinfo
+              - OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python conv2d.py
               - python conv2d.py
 
